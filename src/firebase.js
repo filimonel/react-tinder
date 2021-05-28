@@ -1,4 +1,3 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 import firebase from "firebase";
 
 const firebaseConfig = {
@@ -11,6 +10,7 @@ const firebaseConfig = {
   measurementId: "G-H1DTGTSBE5",
 };
 
+// Connecting firebase to react
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const database = firebaseApp.firestore();
 

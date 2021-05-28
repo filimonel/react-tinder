@@ -1,24 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
+import database from "./firebase";
 import "./TinderCards.css";
 
 const TinderCards = () => {
   // This is how you declare a variable in the react way
   // setPeople([...people, 'sonny', 'qazi']) - react way. push to array
-  const [people, setPeople] = useState([
-    {
-      name: "Satoru Gojo",
-      url: "https://c4.wallpaperflare.com/wallpaper/787/854/424/jujutsu-kaisen-satoru-gojo-anime-boys-anime-girls-hd-wallpaper-preview.jpg",
-    },
-    {
-      name: "Kakashi Hatake",
-      url: "https://c4.wallpaperflare.com/wallpaper/404/527/706/naruto-kakashi-hatake-hd-wallpaper-preview.jpg",
-    },
-    {
-      name: "Erza Scarlet",
-      url: "https://images.alphacoders.com/744/thumb-1920-744311.png",
-    },
-  ]);
+  const [people, setPeople] = useState([]);
+  // This code runs based on a condtion
+  useEffect(() => {
+    // This returns data from firebase database
+    database.collection("people").onSnapshot((snapshot) => {
+      setPeople(snapshot.docs.map((doc) => doc.data()));
+    });
+    // [] will run the code only once when the component loads
+    // [people] this will run once when code loads and when people value changes.
+  }, []);
 
   return (
     <div>
