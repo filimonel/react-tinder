@@ -9,15 +9,17 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* Header */}
-        <Header />
         <Switch>
           <Route path="/chat" exact>
+            {/* Header */}
+            <Header backButton="/" />
             {/* Chat screen */}
             <Chat />
           </Route>
           {/* individual Chat Screen */}
           <Route path="/" exact>
+            {/* Header */}
+            <Header />
             {/* Tinder Cards */}
             <TinderCards />
             {/* Buttons below tinder cards */}
