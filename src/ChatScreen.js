@@ -3,6 +3,7 @@ import { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 
 const ChatScreen = () => {
+  const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
       name: "Mikasa Ackerman",
@@ -20,6 +21,13 @@ const ChatScreen = () => {
       message: "Hows it going?",
     },
   ]);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    // This will add new input from user to messages state to be then displayed.
+    setMessages([...setMessages, { message: input }]);
+    setInput("");
+  };
 
   return (
     <div className="chatScreen">
@@ -46,11 +54,15 @@ const ChatScreen = () => {
       {/* Input */}
       <form className="chatScreen__input">
         <input
+          value={input}
+          onChange={() => setInput(e.input.value)}
           className="chatScreen__inputField"
           placeholder="Type a message"
           type="text"
         />
-        <button className="input__button">SEND</button>
+        <button onClick={handleSend} type="submit" className="input__button">
+          SEND
+        </button>
       </form>
     </div>
   );
