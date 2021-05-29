@@ -3,17 +3,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import TinderCards from "./TinderCards";
 import SwipeButtons from "./SwipeButtons";
+import Chat from "./Chat";
 
 function App() {
   return (
     <div className="App">
-      {/* Header */}
-      <Header />
       <Router>
+        {/* Header */}
+        <Header />
         <Switch>
           <Route path="/chat" exact>
             {/* Chat screen */}
-            <h1>Chat</h1>
+            <Chat />
           </Route>
           {/* individual Chat Screen */}
           <Route path="/" exact>
