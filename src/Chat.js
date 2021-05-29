@@ -1,7 +1,12 @@
 import "./Chat.css";
+import Avatar from "@material-ui/core/Avatar";
 
-const Chat = () => {
-  return <div></div>;
+const Chat = ({ name, message, profilePic, timestamp }) => {
+  return (
+    <div className="chat">
+      <Avatar className="chat__image" alt={name} src={profilePic} />
+    </div>
+  );
 };
 
 export default Chat;
