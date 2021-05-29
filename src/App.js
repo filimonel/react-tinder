@@ -4,16 +4,23 @@ import Header from "./Header";
 import TinderCards from "./TinderCards";
 import SwipeButtons from "./SwipeButtons";
 import Chats from "./Chats";
+import ChatScreen from "./ChatScreen";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/chats/:person" exact>
+            {/* Header */}
+            <Header backButton="/chat" />
+            {/* Chat screen */}
+            <ChatScreen />
+          </Route>
           <Route path="/chats" exact>
             {/* Header */}
             <Header backButton="/" />
-            {/* Chat screen */}
+            {/* Display all active chats */}
             <Chats />
           </Route>
           {/* individual Chat Screen */}
