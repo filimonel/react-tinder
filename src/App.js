@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/chat" exact>
+          <Route path="/chats" exact>
             {/* Header */}
             <Header backButton="/" />
             {/* Chat screen */}

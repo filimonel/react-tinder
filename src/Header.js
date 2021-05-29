@@ -28,7 +28,7 @@ const Header = ({ backButton }) => {
           alt="tinder logo"
         />
       </Link>
-      <Link to="/chat">
+      <Link to="/chats">
         <IconButton>
           <ForumIcon className="header__icon" fontSize="large" />
         </IconButton>

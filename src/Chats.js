@@ -19,13 +19,13 @@ const Chats = () => {
       <Chat
         name="Tanjiro Kamado"
         message="Let's go out?"
-        timestamp="58 seconds ago"
+        timestamp="3 hours ago"
         profilePic="https://i.pinimg.com/originals/d0/3f/f1/d03ff100dfa99fee46fa38ddcbad7252.jpg"
       />
       <Chat
         name="Mai Valentine"
         message="Everyone's coming over"
-        timestamp="13 seconds ago"
+        timestamp="2 days ago"
         profilePic="https://i.pinimg.com/originals/5b/2a/56/5b2a56cf031ff441d9032d9a2e278834.jpg"
       />
     </div>
