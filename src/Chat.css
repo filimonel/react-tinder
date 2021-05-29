@@ -7,6 +7,12 @@
   border-bottom: 1px solid #fafafa;
 }
 
+a {
+  text-decoration: none;
+  /* Remove default blue that a tags set */
+  color: inherit;
+}
+
 .chat__details {
   flex: 1;
 }

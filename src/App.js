@@ -13,7 +13,7 @@ function App() {
         <Switch>
           <Route path="/chats/:person" exact>
             {/* Header */}
-            <Header backButton="/chat" />
+            <Header backButton="/chats" />
             {/* Chat screen */}
             <ChatScreen />
           </Route>
