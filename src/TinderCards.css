@@ -12,6 +12,7 @@
 }
 
 .card > h3 {
+  /* h3 will be relative to .card because card has postion: relative; */
   position: absolute;
   bottom: 10px;
   color: white;

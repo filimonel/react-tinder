@@ -1,0 +1,8 @@
+.swipeButtons {
+  /* An element with position: fixed; is positioned relative to the viewport/window, which means it always stays in the same place even if the page is scrolled. */
+  position: fixed;
+  bottom: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}

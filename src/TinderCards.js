@@ -10,16 +10,22 @@ const TinderCards = () => {
   // This code runs based on a condtion
   useEffect(() => {
     // This returns data from firebase database
-    database.collection("people").onSnapshot((snapshot) => {
+    // returns a detach function aswell that can be saved into variable
+    const unsubscribe = database.collection("people").onSnapshot((snapshot) => {
       setPeople(snapshot.docs.map((doc) => doc.data()));
     });
+
+    return () => {
+      // this is a cleanup...
+      // unsubscribe detaches previous listener and pulls new data
+      unsubscribe();
+    };
     // [] will run the code only once when the component loads
     // [people] this will run once when code loads and when people value changes.
   }, []);
 
   return (
     <div>
-      <h1>Tinder Cards</h1>
       <div className="tinderCards__cardContainer">
         {people.map((person) => (
           <TinderCard
