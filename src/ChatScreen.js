@@ -25,7 +25,8 @@ const ChatScreen = () => {
   const handleSend = (e) => {
     e.preventDefault();
     // This will add new input from user to messages state to be then displayed.
-    setMessages([...setMessages, { message: input }]);
+    setMessages([...messages, { message: input }]);
+    // Wipe Input blank, so it's ready for new message.
     setInput("");
   };
 
@@ -54,12 +55,15 @@ const ChatScreen = () => {
       {/* Input */}
       <form className="chatScreen__input">
         <input
+          // The input value will hold input state
           value={input}
-          onChange={() => setInput(e.input.value)}
+          // Updates input to hold user new message
+          onChange={(e) => setInput(e.target.value)}
           className="chatScreen__inputField"
           placeholder="Type a message"
           type="text"
         />
+        {/* Once click it will run handleSend function */}
         <button onClick={handleSend} type="submit" className="input__button">
           SEND
         </button>
